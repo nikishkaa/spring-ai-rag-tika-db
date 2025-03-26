@@ -4,6 +4,8 @@ spring:
 #Pass API key as environment variable, e.g. -DOPENAI_API_KEY=your-api-key
   ai:
     ollama:
+      init:
+        pull-model-strategy: when_missing
       chat:
         options:
           model: llama2
