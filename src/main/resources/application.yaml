@@ -6,7 +6,7 @@ spring:
     ollama:
       embedding:
        options:
-         model: deepseek-r1:
+         model: deepseek-r1:14b
 sfg:
   aiapp:
     vectorStorePath: /tmp/vectorstore.json
