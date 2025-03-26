@@ -2,7 +2,6 @@ package guru.springframework.springairag.services;
 
 import guru.springframework.springairag.model.Answer;
 import guru.springframework.springairag.model.Question;
-import lombok.RequiredArgsConstructor;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.chat.prompt.Prompt;
@@ -20,7 +19,6 @@ import java.util.Map;
 /**
  * Created by jt, Spring Framework Guru.
  */
-@RequiredArgsConstructor
 @Service
 public class OpenAIServiceImpl implements OpenAIService {
 
@@ -29,6 +27,11 @@ public class OpenAIServiceImpl implements OpenAIService {
 
     @Value("classpath:/templates/rag-prompt-template-meta.st")
     private Resource ragPromptTemplate;
+
+    public OpenAIServiceImpl(ChatModel chatModel, SimpleVectorStore vectorStore) {
+        this.chatModel = chatModel;
+        this.vectorStore = vectorStore;
+    }
 
     @Override
     public Answer getAnswer(Question question) {
