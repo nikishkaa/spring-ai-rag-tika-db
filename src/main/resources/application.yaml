@@ -8,10 +8,10 @@ spring:
         pull-model-strategy: when_missing
       chat:
         options:
-          model: llama2
+          model: mistral
       embedding:
         options:
-          model: llama2
+          model: mistral
 sfg:
   aiapp:
     vectorStorePath: /tmp/vectorstore.json
