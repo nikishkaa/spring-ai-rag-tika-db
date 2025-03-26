@@ -6,10 +6,10 @@ spring:
     ollama:
       chat:
         options:
-          model: deepseek-r1:14b
+          model: llama2
       embedding:
         options:
-          model: deepseek-r1:14b
+          model: llama2
 sfg:
   aiapp:
     vectorStorePath: /tmp/vectorstore.json
