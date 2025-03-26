@@ -4,9 +4,12 @@ spring:
 #Pass API key as environment variable, e.g. -DOPENAI_API_KEY=your-api-key
   ai:
     ollama:
+      chat:
+        options:
+          model: deepseek-r1:14b
       embedding:
-       options:
-         model: deepseek-r1:14b
+        options:
+          model: deepseek-r1:14b
 sfg:
   aiapp:
     vectorStorePath: /tmp/vectorstore.json
