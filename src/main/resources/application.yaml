@@ -8,10 +8,10 @@ spring:
         pull-model-strategy: when_missing
       chat:
         options:
-          model: mistral
+          model: deepseek-r1:32b
       embedding:
         options:
-          model: mistral
+          model: deepseek-r1:32b
 sfg:
   aiapp:
     vectorStorePath: /tmp/vectorstore.json
