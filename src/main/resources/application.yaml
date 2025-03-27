@@ -7,7 +7,7 @@ spring:
         pull-model-strategy: when_missing
       chat:
         options:
-          model: mistral
+          model: deepseek-r1:14b
       embedding:
         options:
           model: mxbai-embed-large
