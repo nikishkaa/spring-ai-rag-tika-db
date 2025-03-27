@@ -11,7 +11,7 @@ spring:
           model: mistral
       embedding:
         options:
-          model: mistral-embeddings
+          model: mxbai-embed-large
 sfg:
   aiapp:
     vectorStorePath: /tmp/vectorstore.json
