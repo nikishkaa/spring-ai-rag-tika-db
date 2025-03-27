@@ -11,9 +11,10 @@ spring:
           model: mistral
       embedding:
         options:
-          model: nomic-embed-text
+          model: mistral-embeddings
 sfg:
   aiapp:
     vectorStorePath: /tmp/vectorstore.json
     documentsToLoad:
       - classpath:/movies500Trimmed.csv
+    promptTemplate: classpath:/templates/rag-prompt-template-meta-ru.st
