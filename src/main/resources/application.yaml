@@ -15,4 +15,4 @@ sfg:
   aiapp:
     vectorStorePath: /tmp/vectorstore.json
     documentsToLoad:
-      - classpath:/cayen-doc.pdf
+      - classpath:/cayenne.txt
