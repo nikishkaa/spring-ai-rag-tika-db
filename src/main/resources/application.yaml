@@ -1,14 +1,13 @@
 spring:
   application:
     name: spring-ai-rag
-#Pass API key as environment variable, e.g. -DOPENAI_API_KEY=your-api-key
   ai:
     ollama:
       init:
         pull-model-strategy: when_missing
       chat:
         options:
-          model: mistral
+          model: llama2:13b
       embedding:
         options:
           model: mxbai-embed-large
@@ -16,4 +15,4 @@ sfg:
   aiapp:
     vectorStorePath: /tmp/vectorstore.json
     documentsToLoad:
-      - classpath:/movies500Trimmed.csv
+      - classpath:/cayen-doc.pdf
