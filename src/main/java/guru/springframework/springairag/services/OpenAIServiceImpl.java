@@ -25,7 +25,7 @@ public class OpenAIServiceImpl implements OpenAIService {
     private final ChatModel chatModel;
     private final SimpleVectorStore vectorStore;
 
-    @Value("classpath:/templates/rag-prompt-template-meta-ru.st")
+    @Value("classpath:/templates/cayen-pompt-template.st")
     private Resource ragPromptTemplate;
 
     public OpenAIServiceImpl(ChatModel chatModel, SimpleVectorStore vectorStore) {
@@ -37,7 +37,7 @@ public class OpenAIServiceImpl implements OpenAIService {
     public Answer getAnswer(Question question) {
 
         List<Document> documents = vectorStore.similaritySearch(SearchRequest.builder()
-                .query(question.question()).topK(5).build());
+                .query(question.question()).topK(10).build());
         List<String> contentList = documents.stream().map(Document::getContent).toList();
 
         PromptTemplate promptTemplate = new PromptTemplate(ragPromptTemplate);
