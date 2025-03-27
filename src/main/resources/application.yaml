@@ -17,4 +17,3 @@ sfg:
     vectorStorePath: /tmp/vectorstore.json
     documentsToLoad:
       - classpath:/movies500Trimmed.csv
-    promptTemplate: classpath:/templates/rag-prompt-template-meta-ru.st
