@@ -25,7 +25,7 @@ public class OpenAIServiceImpl implements OpenAIService {
     private final ChatModel chatModel;
     private final SimpleVectorStore vectorStore;
 
-    @Value("classpath:/templates/rag-prompt-template-meta.st")
+    @Value("classpath:/templates/rag-prompt-template-meta-ru.st")
     private Resource ragPromptTemplate;
 
     public OpenAIServiceImpl(ChatModel chatModel, SimpleVectorStore vectorStore) {
