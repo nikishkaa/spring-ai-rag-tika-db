@@ -18,5 +18,5 @@ sfg:
       - classpath:/prompt.pdf
 logging:
   level:
-    guru.springframework.springairag.services: TRACE
+    guru.springframework.springairag.services: debug
     root: INFO
