@@ -37,14 +37,15 @@ public class OpenAIServiceImpl implements OpenAIService {
     public Answer getAnswer(Question question) {
 
         List<Document> documents = vectorStore.similaritySearch(SearchRequest.builder()
-                .query(question.question()).topK(5).build());
+                .query(question.question()).topK(10).build());
         List<String> contentList = documents.stream().map(Document::getContent).toList();
+
+        System.out.println("Found " + documents.size() + " relevant documents");
+        System.out.println("Question: " + question.question());
 
         PromptTemplate promptTemplate = new PromptTemplate(ragPromptTemplate);
         Prompt prompt = promptTemplate.create(Map.of("input", question.question(), "documents",
                 String.join("\n", contentList)));
-
-        contentList.forEach(System.out::println);
 
         ChatResponse response = chatModel.call(prompt);
 
