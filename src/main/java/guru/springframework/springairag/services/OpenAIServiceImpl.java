@@ -12,6 +12,8 @@ import org.springframework.ai.vectorstore.SimpleVectorStore;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;
@@ -21,7 +23,7 @@ import java.util.Map;
  */
 @Service
 public class OpenAIServiceImpl implements OpenAIService {
-
+    private static final Logger logger = LoggerFactory.getLogger(OpenAIServiceImpl.class);
     private final ChatModel chatModel;
     private final SimpleVectorStore vectorStore;
 
@@ -40,13 +42,13 @@ public class OpenAIServiceImpl implements OpenAIService {
                 .query(question.question()).topK(20).build());
         List<String> contentList = documents.stream().map(Document::getContent).toList();
 
-        System.out.println("Found " + documents.size() + " relevant documents");
-        System.out.println("Question: " + question.question());
-        System.out.println("Relevant documents content:");
+        logger.debug("Found {} relevant documents", documents.size());
+        logger.debug("Question: {}", question.question());
+        logger.trace("Relevant documents content:");
         contentList.forEach(doc -> {
-            System.out.println("---Document Start---");
-            System.out.println(doc);
-            System.out.println("---Document End---");
+            logger.trace("---Document Start---");
+            logger.trace(doc);
+            logger.trace("---Document End---");
         });
 
         PromptTemplate promptTemplate = new PromptTemplate(ragPromptTemplate);

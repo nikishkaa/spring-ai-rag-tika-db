@@ -15,4 +15,8 @@ sfg:
   aiapp:
     vectorStorePath: /tmp/vectorstore.json
     documentsToLoad:
-      - classpath:/usa-konst.pdf
+      - classpath:/prompt.pdf
+logging:
+  level:
+    guru.springframework.springairag.services: TRACE
+    root: INFO
