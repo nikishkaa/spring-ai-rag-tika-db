@@ -42,6 +42,12 @@ public class OpenAIServiceImpl implements OpenAIService {
 
         System.out.println("Found " + documents.size() + " relevant documents");
         System.out.println("Question: " + question.question());
+        System.out.println("Relevant documents content:");
+        contentList.forEach(doc -> {
+            System.out.println("---Document Start---");
+            System.out.println(doc);
+            System.out.println("---Document End---");
+        });
 
         PromptTemplate promptTemplate = new PromptTemplate(ragPromptTemplate);
         Prompt prompt = promptTemplate.create(Map.of("input", question.question(), "documents",
