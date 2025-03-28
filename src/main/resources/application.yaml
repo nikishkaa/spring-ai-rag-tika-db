@@ -7,7 +7,7 @@ spring:
         pull-model-strategy: when_missing
       chat:
         options:
-          model: wizardlm2:7b
+          model: llama2:13b
       embedding:
         options:
           model: mxbai-embed-large
@@ -15,4 +15,4 @@ sfg:
   aiapp:
     vectorStorePath: /tmp/vectorstore.json
     documentsToLoad:
-      - classpath:/cayen-doc.csv
+      - classpath:/usa-konst.pdf

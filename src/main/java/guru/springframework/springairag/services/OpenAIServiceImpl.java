@@ -25,7 +25,7 @@ public class OpenAIServiceImpl implements OpenAIService {
     private final ChatModel chatModel;
     private final SimpleVectorStore vectorStore;
 
-    @Value("classpath:/templates/cayen-pompt-template.st")
+    @Value("classpath:/templates/constitution-prompt-template.st")
     private Resource ragPromptTemplate;
 
     public OpenAIServiceImpl(ChatModel chatModel, SimpleVectorStore vectorStore) {
