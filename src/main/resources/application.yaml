@@ -1,29 +1,16 @@
 spring:
   application:
     name: spring-ai-rag
-  #  ai:
-  #    ollama:
-  #      init:
-  #        pull-model-strategy: when_missing
-  #      chat:
-  #        options:
-  #          model: llama2:13b
-  #      embedding:
-  #        options:
-  #          model: mxbai-embed-large
-  ai:
-    openai:
-      api-key: sk-lycAMKxPhdaQB4O5zKNAJl6glipIhRsR
-      base-url: https://api.proxyapi.ru/openai/v1
-      chat:
-        options:
-          model: gpt-3.5-turbo
-    ollama:
-      init:
-        pull-model-strategy: when_missing
-      embedding:
-        options:
-          model: mxbai-embed-large
+    ai:
+      ollama:
+        init:
+          pull-model-strategy: when_missing
+        chat:
+          options:
+            model: llama2:13b
+        embedding:
+          options:
+            model: mxbai-embed-large
 sfg:
   aiapp:
     vectorStorePath: /tmp/vectorstore.json
