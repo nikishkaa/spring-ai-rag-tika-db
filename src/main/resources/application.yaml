@@ -19,6 +19,7 @@ spring:
         options:
           model: gpt-3.5-turbo
       embedding:
+        base-url: https://api.proxyapi.ru/openai/v1
         options:
           model: text-embedding-ada-002
           dimensions: 1536
