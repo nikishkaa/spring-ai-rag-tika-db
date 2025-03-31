@@ -1,21 +1,23 @@
 spring:
   application:
     name: spring-ai-rag
-    ai:
-      ollama:
-        init:
-          pull-model-strategy: when_missing
-        chat:
-          options:
-            model: llama2:13b
-        embedding:
-          options:
-            model: mxbai-embed-large
+  ai:
+    ollama:
+      init:
+        pull-model-strategy: when_missing
+      chat:
+        options:
+          model: llama2:13b
+      embedding:
+        options:
+          model: mxbai-embed-large
+
 sfg:
   aiapp:
     vectorStorePath: /tmp/vectorstore.json
     documentsToLoad:
       - classpath:/prompt.pdf
+
 logging:
   level:
     guru.springframework.springairag.services: debug
