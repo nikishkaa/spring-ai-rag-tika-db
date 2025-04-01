@@ -6,9 +6,6 @@ import org.springframework.core.io.Resource;
 
 import java.util.List;
 
-/**
- * Created by jt, Spring Framework Guru.
- */
 @Configuration
 @ConfigurationProperties(prefix = "sfg.aiapp")
 public class VectorStoreProperties {

@@ -7,9 +7,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * Created by jt, Spring Framework Guru.
- */
 @RestController
 public class QuestionController {
 
